@@ -22,7 +22,7 @@ body, html {
 }
 /* Global Styles */
 .container {
-    min-height: 100vh;
+    min-height: 91vh;
     display: flex;
     flex-direction: column;
     align-items: center;
