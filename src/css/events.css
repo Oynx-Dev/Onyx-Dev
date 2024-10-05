@@ -1,0 +1,28 @@
+:root {
+    --primary-color: #b700ff;
+    --secondary-color: #1a0017;
+    --accent-color: #ff00ff;
+    --text-color: #ffffff;
+    --button-hover-bg: #ffffff;
+    --button-hover-text: #000000;
+}
+
+
+body, html {
+    height: 100%;
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(0deg, var(--primary-color), var(--secondary-color) 85%);
+    background-size: 100% 200%;
+    animation: gradientAnimation 15s ease infinite;
+    color: var(--text-color);
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+    padding: 20px; /* Add padding to the body */
+}
+
+@keyframes gradientAnimation {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
