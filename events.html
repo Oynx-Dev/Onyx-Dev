@@ -8,8 +8,24 @@
         <script src="https://unpkg.com/lucide@latest"></script>
         <title>Genarcy</title>
     </head>
-    <body class="bg-gradient-to-t from-[#b700ff] to-[#1a0017] w-full h-full">
-        <div id="games">
+    
+        <!-- Navigation bar -->
+        <header class="w-full h-12 flex justify-center mt-8">
+            <nav class="w-1/4 h-full rounded-full bg-white/20 border border-white/10 px-12">
+                <ul class="w-full h-full flex justify-between items-center space-x-4"> <!-- Added space between items -->
+                    <li class="flex space-x-6"> <!-- Flex added to keep icons in one row -->
+                        <a href="index.html" class="text-[#A020F0] hover:text-white transition-all duration-200"> <!-- Hover effect added -->
+                            <i data-lucide="house"></i>
+                        </a>
+                        <a href="events.html" class="text-[#A020F0] hover:text-white transition-all duration-200"> <!-- Hover effect added -->
+                            <i data-lucide="joystick"></i>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+        
+        <div id="games" class="mt-12"> 
             <a href="games/bob-the-robber-2/"><img src="images/bob-the-robber-2.png" alt="bob the robber 2"></a>
             <a href="games/vex7/"><img src="images/vex7.jpeg" alt="vex 7"></a>
             <a href="games/vex6/"><img src="images/vex6.jpeg" alt="vex 6"></a>
@@ -19,25 +35,11 @@
             <a href="games/drive-mad/"><img src="images/drive-mad.jpg" alt="drive mad"></a>
             <a href="games/slope/"><img src="images/slope.jpg" alt="slope"></a>
             <a href="games/motox3m2/"><img src="images/motox3m2.jpg" alt="moto x3m2"></a>
-            <a href="games/bob-the-robber-2/"><img src="images/bob-the-robber-2.png" alt="bob the robber 2"></a>
-            <a href="games/vex7/"><img src="images/vex7.jpeg" alt="vex 7"></a>
-            <a href="games/vex6/"><img src="images/vex6.jpeg" alt="vex 6"></a>
-            <a href="games/"><img src="images/mc.png" alt="minecraft"></a>
-            <a href="games/moto-x3m/"><img src="images/moto-x3m.jpg" alt="moto x3m"></a>
-            <a href="games/retro-bowl/"><img src="images/retro-bowl.jpg" alt="retrobowl"></a>
-            <a href="games/drive-mad/"><img src="images/drive-mad.jpg" alt="drive mad"></a>
-            <a href="games/slope/"><img src="images/slope.jpg" alt="slope"></a>
-            <a href="games/motox3m2/"><img src="images/motox3m2.jpg" alt="moto x3m2"></a>
-            <a href="games/bob-the-robber-2/"><img src="images/bob-the-robber-2.png" alt="bob the robber 2"></a>
-            <a href="games/vex7/"><img src="images/vex7.jpeg" alt="vex 7"></a>
-            <a href="games/vex6/"><img src="images/vex6.jpeg" alt="vex 6"></a>
-            <a href="games/"><img src="images/mc.png" alt="minecraft"></a>
-            <a href="games/moto-x3m/"><img src="images/moto-x3m.jpg" alt="moto x3m"></a>
-            <a href="games/retro-bowl/"><img src="images/retro-bowl.jpg" alt="retrobowl"></a>
-            <a href="games/drive-mad/"><img src="images/drive-mad.jpg" alt="drive mad"></a>
-            <a href="games/slope/"><img src="images/slope.jpg" alt="slope"></a>
-            <a href="games/motox3m2/"><img src="images/motox3m2.jpg" alt="moto x3m2"></a>
-            
+
         </div>
+        
+        <script>
+            lucide.createIcons()
+        </script>
     </body>
 </html>
