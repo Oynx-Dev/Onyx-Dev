@@ -56,45 +56,6 @@ html {
   margin: 1vw 0;
 }
 
-.search {
-  display: flex;
-  user-select: none;
-  margin-top: 2.5vw;
-  margin-left: 1.2vw;
-}
-
-.search input {
-  background-color: #222222;
-  border: none;
-  border-radius: 1vw 0 0 1vw;
-  color: #fff;
-  font-size: 1.5vw;
-  font-weight: 600;
-  padding: 0.8vw 1.5vw;
-  font-family: "Montserrat", sans-serif;
-  z-index: 1;
-  outline: none;
-}
-
-.search input::placeholder {
-  color: #fff;
-  font-weight: 600;
-  font-size: 1.5vw;
-}
-
-.search button {
-  background-color: #fff;
-  border: none;
-  border-radius: 0 1vw 1vw 0;
-  color: #222222;
-  font-size: 1.5vw;
-  font-weight: 600;
-  padding: 0.8vw 1vw;
-  cursor: pointer;
-  font-family: "Montserrat", sans-serif;
-  z-index: 1;
-  transition: 0.3s all ease;
-}
 
 #games {
   display: flex;
@@ -160,4 +121,21 @@ html {
   border-radius: 2rem;
   filter: brightness(0.5);
   z-index: -1;
+}
+
+#searchbar {
+  width: 200px;
+  padding: 10px;
+  border: 1px solid #b700ff;
+  border-radius: 5px;
+  font-size: 14px;
+  display: block;
+  margin: 0 auto;
+  background-color: transparent;
+  margin-top: 20px;
+}
+
+#searchbar:focus {
+  outline: none;
+  border-color: #b700ff;
 }
