@@ -11,7 +11,7 @@
     
         <!-- Navigation bar -->
         <header class="w-full h-12 flex justify-center">
-            <nav class="w-1/4 h-full rounded-full bg-white/20 backdrop-blur-xl backdrop-blur-xl border border-white/10 px-12">
+            <nav class="w-1/4 h-full rounded-full bg-white/10 backdrop-blur-xl backdrop-blur-xl border border-white/10 px-12">
                 <ul class="w-full h-full flex justify-between items-center space-x-4"> <!-- Added space between items -->
                     <li class="flex space-x-6"> <!-- Flex added to keep icons in one row -->
                         <a href="index.html" class="text-white/80 hover:text-white transition-all duration-200"> <!-- Hover effect added -->
@@ -19,6 +19,9 @@
                         </a>
                         <a href="events.html" class="text-white/80 hover:text-white transition-all duration-200"> <!-- Hover effect added -->
                             <i data-lucide="joystick"></i>
+                        <a href="search.html" class="text-white/80 hover:text-white transition-all duration-200"> 
+                            <i data-lucide="search"></i>
+                            </a>
                         </a>
                     </li>
                 </ul>
@@ -26,7 +29,7 @@
         </header>
         
         <div class="flex justify-center items-center h-[80vh]">
-            <iframe id="game" class="rounded-[10px] w-[90%] h-[80vh] mt-[50px]"></iframe>
+            <iframe id="game" class="rounded-[10px] w-[90%] h-[80vh] mt-[30px]"></iframe>
         </div>
         <script>
             let game = localStorage.getItem("game");

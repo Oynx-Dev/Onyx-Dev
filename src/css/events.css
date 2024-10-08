@@ -1,7 +1,7 @@
 :root {
-  --primary-color: #b700ff;
-  --secondary-color: #1a0017;
-  --accent-color: #ff00ff;
+  --primary-color: #111827;
+  --secondary-color: #111827;
+  --accent-color: #4f46e5;
   --text-color: #ffffff;
   --button-hover-bg: #ffffff;
   --button-hover-text: #000000;
@@ -117,7 +117,7 @@ html {
   left: 0;
   right: 0;
   bottom: 0;
-  background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
+  background: linear-gradient(90deg, #8b5cf6, var(--accent-color));
   border-radius: 2rem;
   filter: brightness(0.5);
   z-index: -1;
@@ -126,7 +126,7 @@ html {
 #searchbar {
   width: 200px;
   padding: 10px;
-  border: 1px solid #b700ff;
+  border: 1px solid #8b5cf6;
   border-radius: 5px;
   font-size: 14px;
   display: block;
@@ -137,5 +137,5 @@ html {
 
 #searchbar:focus {
   outline: none;
-  border-color: #b700ff;
+  border-color: #8b5cf6;
 }
