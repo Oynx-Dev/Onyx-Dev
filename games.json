@@ -1,5 +1,11 @@
 [
     {
+      "name": "Learn to fly 3",
+      "root": "ltf3",
+      "file": "index.html",
+      "img": "logo.png"
+    },
+    {
       "name": "1",
       "root": "1",
       "file": "index.html",
@@ -1726,6 +1732,18 @@
       "root": "xx142-b2exe",
       "file": "index.html",
       "img": "splash.png"
+    },
+    {
+      "name": "99 Balls",
+      "root": "99balls",
+      "file": "index.html",
+      "img": "99-balls-evo.jpg"
+    },
+    {
+      "name": "Run 3",
+      "root": "99balls",
+      "file": "index.html",
+      "img": "99-balls-evo.jpg"
     }
   ]
   
