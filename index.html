@@ -8,14 +8,14 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/lucide@latest"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="/src/css/bubbles.css">
+    <link rel="stylesheet" href="/src/css/fade.css">
 </head>
-<body class="flex flex-col h-screen bg-gray-900 border border-gray-900">
-
+<body class="flex flex-col h-screen fade-in" style="background: linear-gradient(to left top, rgb(16, 52, 82), rgb(9, 34, 55), black) center center / cover no-repeat fixed; height: 100%; font-family: 'Arial', sans-serif; font-weight: bold;">
     <nav class="fixed top-4 left-1/2 transform -translate-x-1/2 z-50 flex items-center bg-white/10 backdrop-blur-lg px-6 py-2 rounded-full shadow-lg border border-gray-700">
         <div class="flex items-center space-x-4">
             <!-- Logo -->
             <img src="https://lh3.googleusercontent.com/a/AEdFTp6LnSC8IhbEMuwZPygGyhbMuQZj0WaGgcLu_1djeQ=s96-c" alt="Onyx Logo" class="h-10 rounded-full border border-white/10">
-
             <!-- Nav Links -->
             <ul class="flex space-x-6">
                 <li>
@@ -36,15 +36,14 @@
             </ul>
         </div>
     </nav>
-
     <!-- Main Content -->
     <header class="w-full h-12 flex justify-center mt-6"></header>
-
-    <main class="flex flex-col absolute -translate-x-2/4 -translate-y-2/4 left-2/4 top-2/4 items-center">
-        <h1 class="font-light text-7xl bg-gradient-to-r from-[#4f46e5] to-[#8b5cf6] text-transparent bg-clip-text pb-4 font-semibold">Onyx Dev.</h1>
+    <main class="flex flex-col absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 items-center">
+        <h1 class="font-light text-7xl bg-gradient-to-r from-[#4f46e5] to-[#8b5cf6] text-transparent bg-clip-text pb-4 font-semibold glow-effect" style="text-shadow: 0 0 10px rgba(79, 70, 229, 0.8), 0 0 20px rgba(139, 92, 246, 0.6);">Onyx Dev.</h1>
         <p id="subtitle" class="text-3xl text-white/80 font-semibold">...</p>
     </main>
-
+    <div class="bubble-container"></div>
+    <script src="/src/js/bubbles.js"></script>
     <script src="/src/js/subtitle.js"></script>
     <script>
         lucide.createIcons()

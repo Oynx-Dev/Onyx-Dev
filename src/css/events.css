@@ -50,15 +50,16 @@ html {
   border: var(--scrollbar-border-width) solid var(--primary-color);
 }
 
-@keyframes gradientAnimation {
-  0% {
-    background-position: 0% 50%;
+.fade-in {
+  animation: fadeIn 2s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+      opacity: 0;
   }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
+  to {
+      opacity: 1;
   }
 }
 
@@ -102,11 +103,12 @@ html {
   color: white;
   position: relative;  
 }
-
 .g:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+  transform: translate(10px, -10px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4), 0 0 15px var(--accent-color), 0 0 30px var(--accent-color), 0 0 45px var(--accent-color);
+  background-color: var(--accent-color);
 }
+
 
 .g img {
   width: 100%;
@@ -147,16 +149,41 @@ html {
 
 
 #searchbar {
-  width: var(--searchbar-width);
-  padding: var(--searchbar-padding);
-  border: 1px solid #000000;
-  border-radius: var(--searchbar-border-radius);
-  font-size: var(--searchbar-font-size);
+  padding: var(--searchbar-padding, 10px); /* Added fallback values */
+  border: 1px solid #007BFF;
+  border-radius: var(--searchbar-border-radius, 4px);
+  font-size: var(--searchbar-font-size, 16px);
   display: block;
-  background-color: transparent;
+  width: 100%; /* Ensures the input takes up full width in container */
+  max-width: 400px; /* Max width for better responsiveness */
+  background-color: var(--input-bg-color, transparent); /* Added variable for background color */
+  color: var(--text-color, #000); /* Added fallback */
+  transition: border-color 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease; /* Added bg transition */
+  appearance: none; /* Removes default styles for consistent look across browsers */
+  -webkit-appearance: none; /* Safari support */
+}
+
+#searchbar::placeholder {
+  color: var(--placeholder-color, #888); /* Ensure placeholder visibility */
+  opacity: 0.8; /* Slight transparency for placeholder */
 }
 
 #searchbar:focus {
   outline: none;
-  border-color: #8b5cf6;
+  box-shadow: 0 0 5px var(--accent-color, #007BFF); /* Added fallback color */
+  border-color: var(--accent-color, #007BFF);
+  background-color: transparent
 }
+
+#searchbar:disabled {
+  background-color: #f5f5f5; /* Disabled state background */
+  cursor: not-allowed;
+  opacity: 0.6; /* Visual indication of disabled state */
+}
+
+#searchbar:invalid {
+  border-color: var(--error-color, red); /* Highlight border if input is invalid */
+  box-shadow: 0 0 5px var(--error-color, red);
+}
+
+

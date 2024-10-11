@@ -6,12 +6,13 @@
     <meta name="description" content="Onyx - Your go-to platform for gaming events and more.">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <link rel="stylesheet" href="/src/css/events.css">
+    <link rel="stylesheet" href="/src/css/bubbles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/lucide@latest"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <title>Onyx</title>
 </head>
-<body class="flex flex-col h-screen bg-gray-900 border border-gray-900">
+<body class="flex flex-col h-screen" style="background: linear-gradient(to left top, rgb(16, 52, 82), rgb(9, 34, 55), black) center center / cover no-repeat fixed; height: 100%; font-family: 'Arial', sans-serif; font-weight: bold;">
     <!-- Floating Navbar -->
     <nav class="fixed top-4 left-1/2 transform -translate-x-1/2 z-50 flex items-center bg-white/10 backdrop-blur-lg px-6 py-2 rounded-full shadow-lg border border-gray-700">
         <div class="flex items-center space-x-4">
@@ -40,9 +41,11 @@
     <!-- Main Content -->
     <input type="text" placeholder="Search for games" id="searchbar" class="mt-24 px-4 py-2 rounded-md bg-gray-800 text-white border border-gray-600 w-1/2 mx-auto">
     <div class="games-container mt-8"></div>
+    <div class="bubble-container"></div>
+    <script src="/src/js/bubbles.js"></script>
     <script src="/src/js/games.js"></script>
     <script>
-        lucide.createIcons()
+        lucide.createIcons();
     </script>
 </body>
 </html>
