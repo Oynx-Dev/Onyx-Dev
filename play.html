@@ -7,6 +7,24 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/lucide@latest"></script>
     <title>Onyx</title>
+    <style>
+        .fullscreen-btn {
+            position: absolute;
+            top: 90%; /* Adjust as needed */
+            right: 8%; /* Adjust as needed */
+            background-color: rgba(0, 0, 0, 0.541); /* Semi-transparent background */
+            border: none;
+            border-radius: 5px;
+            padding: 5px 10px;
+            cursor: pointer;
+            z-index: 100; /* Ensure it is above other elements */
+            transition: background-color 0.3s;
+        }
+
+        .fullscreen-btn:hover {
+            background-color: rgba(255, 255, 255, 0.6); /* Change background on hover */
+        }
+    </style>
 </head>
 
 <body class="h-full font-poppins bg-gradient-to-b from-gray-900 to-gray-900 bg-[length:100%_200%] text-white overflow-x-hidden p-5">
@@ -30,7 +48,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="search.html" class="text-white hover:text-gray-300 transition-all flex items-center space-x-2">
+                    <a href="/search/index.html" class="text-white hover:text-gray-300 transition-all flex items-center space-x-2">
                         <i data-lucide="search"></i> <span>Search</span>
                     </a>
                 </li>
@@ -39,8 +57,9 @@
     </nav>
 
     <!-- Main Content: Game Display -->
-    <div class="flex justify-center items-center h-[calc(92vh-3rem)] mt-[5rem]"> <!-- Added margin-top to create space for the navbar -->
+    <div class="flex justify-center items-center h-[calc(92vh-3rem)] mt-[5rem] relative"> <!-- Added relative positioning -->
         <iframe id="game" class="rounded-[10px] w-[90%] h-full"></iframe> <!-- Set height to full to use available height -->
+        <button class="fullscreen-btn" id="fullscreenBtn">Fullscreen</button> <!-- Fullscreen button -->
     </div>
 
     <!-- Game Loading Script -->
@@ -59,6 +78,32 @@
         } else {
             console.error('No game found.');
         }
+
+        // Fullscreen functionality
+        const fullscreenBtn = document.getElementById("fullscreenBtn");
+        const iframe = document.getElementById("game");
+
+        fullscreenBtn.addEventListener("click", () => {
+            if (document.fullscreenElement) {
+                document.exitFullscreen();
+            } else {
+                iframe.requestFullscreen();
+            }
+        });
+
+        // Show or hide the fullscreen button based on fullscreen state
+        document.addEventListener("fullscreenchange", () => {
+            if (document.fullscreenElement) {
+                fullscreenBtn.textContent = "Exit Fullscreen"; // Change button text
+                fullscreenBtn.classList.remove("hidden"); // Show the button
+            } else {
+                fullscreenBtn.textContent = "Fullscreen"; // Change button text back
+                fullscreenBtn.classList.remove("hidden"); // Show the button
+            }
+        });
+
+        // Hide the button initially
+        fullscreenBtn.classList.remove("hidden");
     </script>
 
     <script src="/src/js/games.js"></script>

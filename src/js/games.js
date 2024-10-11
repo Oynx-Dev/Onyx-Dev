@@ -1,6 +1,6 @@
 async function fetchGames() {
     try {
-        const response = await fetch('games.json');
+        const response = await fetch('games.json ');
         const games = await response.json();
         games.sort((a, b) => a.name.localeCompare(b.name));
         renderGames(games);

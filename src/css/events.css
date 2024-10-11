@@ -5,17 +5,28 @@
   --text-color: #ffffff;
   --button-hover-bg: #ffffff;
   --button-hover-text: #000000;
+  --scrollbar-width: 12px;
+  --scrollbar-border-radius: 10px;
+  --scrollbar-border-width: 3px;
+  --game-img-size: 10.6vw;
+  --game-img-margin: 0.5vw;
+  --game-container-margin: 10px;
+  --game-container-padding: 10px;
+  --game-container-border-radius: 5px;
+  --game-container-font-size: 1rem;
+  --game-img-height: 180px;
+  --game-img-border-radius: 2rem;
+  --searchbar-width: 200px;
+  --searchbar-padding: 10px;
+  --searchbar-border-radius: 5px;
+  --searchbar-font-size: 14px;
 }
 
 body,
 html {
   height: 100%;
   margin: 0;
-  background: linear-gradient(
-    0deg,
-    var(--primary-color),
-    var(--secondary-color) 85%
-  );
+  background: linear-gradient(0deg, var(--primary-color), var(--secondary-color) 85%);
   background-size: 100% 200%;
   animation: gradientAnimation 15s ease infinite;
   color: var(--text-color);
@@ -26,7 +37,7 @@ html {
 
 /* Custom Scrollbar */
 ::-webkit-scrollbar {
-  width: 12px;
+  width: var(--scrollbar-width);
 }
 
 ::-webkit-scrollbar-track {
@@ -35,8 +46,8 @@ html {
 
 ::-webkit-scrollbar-thumb {
   background-color: var(--accent-color);
-  border-radius: 10px;
-  border: 3px solid var(--primary-color);
+  border-radius: var(--scrollbar-border-radius);
+  border: var(--scrollbar-border-width) solid var(--primary-color);
 }
 
 @keyframes gradientAnimation {
@@ -55,98 +66,92 @@ html {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  padding: 0; /* Removed padding from here */
+  padding: 0;
   position: relative;
-  flex-grow: 1; /* Allow content to grow */
-  overflow: visible; /* Remove overflow from content */
+  flex-grow: 1;
+  overflow: visible;
   margin-top: 60px; /* Add margin-top to clear the navbar height */
 }
 
 .content hr {
   border: 0;
   height: 4px;
-  background-image: linear-gradient(
-    to right,
-    rgba(0, 0, 0, 0),
-    rgb(255, 255, 255),
-    rgba(0, 0, 0, 0)
-  );
+  background-image: linear-gradient(to right, rgba(0, 0, 0, 0), var(--text-color), rgba(0, 0, 0, 0));
   margin: 1vw 0;
-}
-
-#games {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center; /* Center the games horizontally */
-  align-items: center; /* Center the games vertically */
-  margin-top: 0.6vw;
-  padding-bottom: 5vw;
-}
-
-#games img {
-  height: 10.6vw;
-  width: 10.6vw;
-  border-radius: 1vw;
-  margin: 0.5vw;
-  cursor: pointer;
-  user-select: none;
-  transition: transform 0.2s;
-}
-
-#games img:hover {
-  transform: scale(1.01);
 }
 
 .games-container {
   display: flex;
-  margin: 10px;
   flex-wrap: wrap;
-  justify-content: center; /* Center the games container */
+  justify-content: center;
+  padding-bottom: 5vw;
+  margin-top: 1vw;
 }
 
 .g {
-  width: 200px;
-  padding: 10px;
-  border-radius: 5px;
-  text-align: center;
-  outline: none;
-  text-decoration: none;
-  cursor: pointer;
-  font-size: 1rem;
+  width: 250px;
+  padding: 1rem;
+  margin: 1rem;
+  background-size: cover;
+  background-position: center;
+  border: 2px solid rgba(0, 0, 0, 0.452);
+  border-radius: 15px;
+  text-align: left;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  color: white;
+  position: relative;
+}
+
+.g:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
 }
 
 .g img {
   width: 100%;
-  height: 180px;
-  border-radius: 2rem;
+  height: auto; /* Change this to auto to maintain aspect ratio */
+  border-radius: 10px;
+  margin-bottom: 15px;
+  position: relative; /* Ensures image is positioned correctly */
+  z-index: 7; /* Set the z-index lower than h3 */
 }
 
 .g h3 {
-  margin: 0.5vw 0;
-  position: relative;
-  z-index: 1;
-  background: none;
+  margin: 1.6rem 0;
+  font-size: 1.2rem;
+  color: #ffffff;
+  font-weight: bold;
+  z-index: 8; /* Set a higher z-index to ensure it appears above the image */
+  position: absolute; /* Change to absolute for positioning */
+  bottom: 15px; /* Position it at the bottom of the container */
+  left: 20px; /* Adjust as needed for spacing from the left */
+  background-color: rgba(0, 0, 0, 0.534);
+  border-radius: 5px;
+
 }
 
-.g h3::before {
+
+.g::before {
   content: '';
   position: absolute;
   top: 0;
   left: 0;
-  right: 0;
-  bottom: 0;
-  background: linear-gradient(90deg, #8b5cf6, var(--accent-color));
-  border-radius: 2rem;
-  filter: brightness(0.5);
-  z-index: -1;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Dark overlay for readability */
+  border-radius: 15px;
+  z-index: 2; /* Ensure the overlay is below the h3 */
 }
 
+
+
 #searchbar {
-  width: 200px;
-  padding: 10px;
+  width: var(--searchbar-width);
+  padding: var(--searchbar-padding);
   border: 1px solid #000000;
-  border-radius: 5px;
-  font-size: 14px;
+  border-radius: var(--searchbar-border-radius);
+  font-size: var(--searchbar-font-size);
   display: block;
   background-color: transparent;
 }
