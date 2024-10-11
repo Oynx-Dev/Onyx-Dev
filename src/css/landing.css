@@ -38,6 +38,7 @@ h1 {
     letter-spacing: 4px;
     background: linear-gradient(to right, var(--accent-color), var(--text-color));
     -webkit-background-clip: text;
+    background-clip: text;
     color: transparent;
     animation: fadeInUp 2s ease-in-out;
 }
