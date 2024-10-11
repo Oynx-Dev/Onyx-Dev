@@ -11,7 +11,6 @@ body,
 html {
   height: 100%;
   margin: 0;
-  font-family: "Poppins", sans-serif;
   background: linear-gradient(
     0deg,
     var(--primary-color),
@@ -21,8 +20,23 @@ html {
   animation: gradientAnimation 15s ease infinite;
   color: var(--text-color);
   scroll-behavior: smooth;
-  overflow-x: hidden;
-  padding: 20px; /* Add padding to the body */
+  overflow-x: hidden; /* Hide horizontal scrollbar */
+  overflow-y: auto; /* Show vertical scrollbar only when needed */
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--primary-color);
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--accent-color);
+  border-radius: 10px;
+  border: 3px solid var(--primary-color);
 }
 
 @keyframes gradientAnimation {
@@ -38,10 +52,14 @@ html {
 }
 
 .content {
+  display: flex;
   flex-direction: column;
-  align-items: left;
-  padding: 7vw;
-  padding-top: 0vw;
+  align-items: flex-start;
+  padding: 0; /* Removed padding from here */
+  position: relative;
+  flex-grow: 1; /* Allow content to grow */
+  overflow: visible; /* Remove overflow from content */
+  margin-top: 60px; /* Add margin-top to clear the navbar height */
 }
 
 .content hr {
@@ -56,11 +74,11 @@ html {
   margin: 1vw 0;
 }
 
-
 #games {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: center; /* Center the games horizontally */
+  align-items: center; /* Center the games vertically */
   margin-top: 0.6vw;
   padding-bottom: 5vw;
 }
@@ -83,7 +101,7 @@ html {
   display: flex;
   margin: 10px;
   flex-wrap: wrap;
-  justify-content: left;
+  justify-content: center; /* Center the games container */
 }
 
 .g {
@@ -94,7 +112,7 @@ html {
   outline: none;
   text-decoration: none;
   cursor: pointer;
-  font-size: 1;
+  font-size: 1rem;
 }
 
 .g img {
@@ -126,13 +144,11 @@ html {
 #searchbar {
   width: 200px;
   padding: 10px;
-  border: 1px solid #8b5cf6;
+  border: 1px solid #000000;
   border-radius: 5px;
   font-size: 14px;
   display: block;
-  margin: 0 auto;
   background-color: transparent;
-  margin-top: 20px;
 }
 
 #searchbar:focus {

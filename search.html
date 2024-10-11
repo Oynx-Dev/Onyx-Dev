@@ -1,38 +1,65 @@
 <!DOCTYPE html>
 <html lang="en" class="w-full h-full">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <!-- <link rel="stylesheet" href="/src/css/landing.css"> -->
-        <script src="https://cdn.tailwindcss.com"></script>
-        <script src="https://unpkg.com/lucide@latest"></script>
-        <title>Onyx</title>
-    </head>
-    <body class="flex flex-col h-screen bg-gray-900 border border-gray-900">
-        <header class="w-full h-12 flex justify-center mt-6">
-            <nav class="w-1/4 h-full rounded-full bg-white/10 backdrop-blur-xl border border-white/10 px-12">
-                <ul class="w-full h-full flex justify-between items-center space-x-4"> 
-                    <li class="flex space-x-6"> 
-                        <a href="index.html" class="text-white/80 hover:text-white transition-all duration-200"> 
-                            <i data-lucide="house"></i>
-                        </a>
-                        <a href="events.html" class="text-white/80 hover:text-white transition-all duration-200"> 
-                            <i data-lucide="joystick"></i>
-                        </a>
-                        <a href="search.html" class="text-white/80 hover:text-white transition-all duration-200"> 
-                            <i data-lucide="search"></i>
-                        </a>
-                    </li>
-                </ul>
-            </nav>
-        </header>
-        <div class="flex flex-col absolute -translate-x-2/4 -translate-y-2/4 left-2/4 top-2/4 items-center">
-            <h1 class="font-light text-7xl bg-gradient-to-r from-[#4f46e5] to-[#8b5cf6] text-transparent bg-clip-text pb-4 font-semibold">Coming soon...</h1>
-            <h1 class="font-light text-3xl bg-gradient-to-r from-[#4f46e5] to-[#8b5cf6] text-transparent bg-clip-text pb-4 font-semibold">By soon i mean like when i get motiviation at like 3 am</h1>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Onyx</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
 
-        </div>
-        <script>
-            lucide.createIcons()
-        </script>
-    </body>
+        .fade-in {
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 12px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #111827;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background-color: #4f46e5;
+            border-radius: 10px;
+            border: 3px solid #111827;
+        }
+    </style>
+</head>
+<body class="flex flex-col h-screen bg-gray-900 border border-gray-900 overflow-hidden">
+    <header class="w-full h-12 flex justify-center mt-6">
+        <nav class="w-1/4 h-full rounded-full bg-white/10 backdrop-blur-xl border border-white/10 px-12">
+            <ul class="w-full h-full flex justify-between items-center space-x-4"> 
+                <li class="flex space-x-6"> 
+                    <a href="index.html" class="text-white/80 hover:text-white transition-all duration-200"> 
+                        <i data-lucide="house"></i>
+                    </a>
+                    <a href="events.html" class="text-white/80 hover:text-white transition-all duration-200"> 
+                        <i data-lucide="joystick"></i>
+                    </a>
+                    <a href="search.html" class="text-white/80 hover:text-white transition-all duration-200"> 
+                        <i data-lucide="search"></i>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <main class="flex flex-col absolute -translate-x-2/4 -translate-y-2/4 left-2/4 top-2/4 items-center">
+        <h1 class="font-light text-7xl bg-gradient-to-r from-[#4f46e5] to-[#8b5cf6] text-transparent bg-clip-text pb-4 font-semibold fade-in">Coming soon...</h1>
+        <h1 class="font-light text-3xl bg-gradient-to-r from-[#4f46e5] to-[#8b5cf6] text-transparent bg-clip-text pb-4 font-semibold fade-in">By soon I mean like when I get motivation at like 3 am</h1>
+    </main>
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
 </html>
