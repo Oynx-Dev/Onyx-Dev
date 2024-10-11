@@ -10,7 +10,6 @@
     <meta name="googlebot" content="index, follow, snippet" />
     <link href="index.css" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://cdn.tailwindcss.com"></script>
 </head>
 
 <body class="bg-gray-900 text-white">
@@ -42,13 +41,16 @@
         </div>
     </nav>
 
-    <div title="Ultraviolet uses the power of service-workers and more! Unblock many sites today with Ultraviolet!" class="desc mt-20">
-        <h1 class="text-3xl font-bold text-center">Welcome to Ultraviolet</h1>
-        <p class="text-center mt-2">Your gateway to the free web!</p>
-    </div>
-    <form class="mt-6 text-center">
-        <input type="text" placeholder="Search the web freely" class="rounded-full px-4 py-2 w-1/2 bg-gray-800 text-white border border-gray-600 focus:outline-none focus:border-blue-500">
-    </form>
+    <main class="mt-20 text-center">
+        <div title="Ultraviolet uses the power of service-workers and more! Unblock many sites today with Ultraviolet!" class="desc">
+            <h1 class="text-3xl font-bold">Welcome to Ultraviolet</h1>
+            <p class="mt-2">Your gateway to the free web!</p>
+        </div>
+        <form class="mt-6">
+            <input type="text" placeholder="Search the web freely" class="rounded-full px-4 py-2 w-1/2 bg-gray-800 text-white border border-gray-600 focus:outline-none focus:border-blue-500">
+        </form>
+    </main>
+
     <script src="uv/uv.bundle.js"></script>
     <script src="uv/uv.config.js"></script>
     <script src="index.js"></script>
