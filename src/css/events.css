@@ -21,7 +21,6 @@
   --searchbar-border-radius: 5px;
   --searchbar-font-size: 14px;
 }
-
 body,
 html {
   height: 100%;
@@ -31,29 +30,23 @@ html {
   animation: gradientAnimation 15s ease infinite;
   color: var(--text-color);
   scroll-behavior: smooth;
-  overflow-x: hidden; /* Hide horizontal scrollbar */
-  overflow-y: auto; /* Show vertical scrollbar only when needed */
+  overflow-x: hidden;
+  overflow-y: auto;
 }
-
-/* Custom Scrollbar */
 ::-webkit-scrollbar {
   width: var(--scrollbar-width);
 }
-
 ::-webkit-scrollbar-track {
   background: var(--primary-color);
 }
-
 ::-webkit-scrollbar-thumb {
   background-color: var(--accent-color);
   border-radius: var(--scrollbar-border-radius);
   border: var(--scrollbar-border-width) solid var(--primary-color);
 }
-
 .fade-in {
   animation: fadeIn 2s ease-in-out;
 }
-
 @keyframes fadeIn {
   from {
       opacity: 0;
@@ -62,7 +55,6 @@ html {
       opacity: 1;
   }
 }
-
 .content {
   display: flex;
   flex-direction: column;
@@ -71,16 +63,14 @@ html {
   position: relative;
   flex-grow: 1;
   overflow: visible;
-  margin-top: 60px; /* Add margin-top to clear the navbar height */
+  margin-top: 60px;
 }
-
 .content hr {
   border: 0;
   height: 4px;
   background-image: linear-gradient(to right, rgba(0, 0, 0, 0), var(--text-color), rgba(0, 0, 0, 0));
   margin: 1vw 0;
 }
-
 .games-container {
   display: flex;
   flex-wrap: wrap;
@@ -88,7 +78,6 @@ html {
   padding-bottom: 5vw;
   margin-top: 1vw;
 }
-
 .g {
   width: 250px;
   padding: 1rem;
@@ -108,32 +97,26 @@ html {
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4), 0 0 15px var(--accent-color), 0 0 30px var(--accent-color), 0 0 45px var(--accent-color);
   background-color: var(--accent-color);
 }
-
-
 .g img {
   width: 100%;
-  height: auto; /* Change this to auto to maintain aspect ratio */
+  height: auto;
   border-radius: 10px;
   margin-bottom: 15px;
-  position: relative; /* Ensures image is positioned correctly */
-  z-index: 7; /* Set the z-index lower than h3 */
+  position: relative;
+  z-index: 7;
 }
-
 .g h3 {
   margin: 1.6rem 0;
   font-size: 1.2rem;
   color: #ffffff;
   font-weight: bold;
-  z-index: 8; /* Set a higher z-index to ensure it appears above the image */
-  position: absolute; /* Change to absolute for positioning */
-  bottom: 15px; /* Position it at the bottom of the container */
-  left: 20px; /* Adjust as needed for spacing from the left */
+  z-index: 8;
+  position: absolute;
+  bottom: 15px;
+  left: 20px;
   background-color: rgba(0, 0, 0, 0.534);
   border-radius: 5px;
-
 }
-
-
 .g::before {
   content: '';
   position: absolute;
@@ -141,10 +124,8 @@ html {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(59, 58, 90, 0.349); /* Dark overlay for readability */
+  background-color: rgba(59, 58, 90, 0.349);
   border-radius: 15px;
-  z-index: 2; /* Ensure the overlay is below the h3 */
-  box-shadow: 0 0 15px rgba(255, 255, 255, 0.5), 0 4px 10px rgba(0, 0, 0, 0.308); /* White glow effect and additional shadow */
+  z-index: 2;
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.5), 0 4px 10px rgba(0, 0, 0, 0.308);
 }
-
-
