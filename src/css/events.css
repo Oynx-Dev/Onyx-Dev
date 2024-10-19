@@ -1,37 +1,7 @@
 :root {
-  --primary-color: #111827;
-  --secondary-color: #111827;
-  --accent-color: #4f46e5;
-  --text-color: #ffffff;
-  --button-hover-bg: #ffffff;
-  --button-hover-text: #000000;
   --scrollbar-width: 12px;
   --scrollbar-border-radius: 10px;
   --scrollbar-border-width: 3px;
-  --game-img-size: 10.6vw;
-  --game-img-margin: 0.5vw;
-  --game-container-margin: 10px;
-  --game-container-padding: 10px;
-  --game-container-border-radius: 5px;
-  --game-container-font-size: 1rem;
-  --game-img-height: 180px;
-  --game-img-border-radius: 2rem;
-  --searchbar-width: 200px;
-  --searchbar-padding: 10px;
-  --searchbar-border-radius: 5px;
-  --searchbar-font-size: 14px;
-}
-body,
-html {
-  height: 100%;
-  margin: 0;
-  background: linear-gradient(0deg, var(--primary-color), var(--secondary-color) 85%);
-  background-size: 100% 200%;
-  animation: gradientAnimation 15s ease infinite;
-  color: var(--text-color);
-  scroll-behavior: smooth;
-  overflow-x: hidden;
-  overflow-y: auto;
 }
 ::-webkit-scrollbar {
   width: var(--scrollbar-width);
@@ -44,33 +14,7 @@ html {
   border-radius: var(--scrollbar-border-radius);
   border: var(--scrollbar-border-width) solid var(--primary-color);
 }
-.fade-in {
-  animation: fadeIn 2s ease-in-out;
-}
-@keyframes fadeIn {
-  from {
-      opacity: 0;
-  }
-  to {
-      opacity: 1;
-  }
-}
-.content {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  padding: 0;
-  position: relative;
-  flex-grow: 1;
-  overflow: visible;
-  margin-top: 60px;
-}
-.content hr {
-  border: 0;
-  height: 4px;
-  background-image: linear-gradient(to right, rgba(0, 0, 0, 0), var(--text-color), rgba(0, 0, 0, 0));
-  margin: 1vw 0;
-}
+
 .games-container {
   display: flex;
   flex-wrap: wrap;
@@ -106,7 +50,7 @@ html {
   z-index: 7;
 }
 .g h3 {
-  margin: 1.6rem 0;
+  margin: 1.3rem 0;
   font-size: 1.2rem;
   color: #ffffff;
   font-weight: bold;
