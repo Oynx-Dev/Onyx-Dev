@@ -1,0 +1,27 @@
+/* Custom Styles for Modal Hover Effect */
+#settingsContainer {
+    position: relative;
+}
+
+#settingsModal {
+    opacity: 0;
+    visibility: hidden;
+    position: absolute;
+    top: 110%; /* Just below the settings button */
+    left: 50%;
+    transform: translateX(-50%);
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+    background-color: rgba(0, 0, 0, 0.637); /* Set background opacity */
+    border: 1px solid white;
+    padding: 1rem;
+    width: 200px;
+    border-radius: 0.5rem;
+    margin-top: 40%;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Hover state to show the modal */
+#settingsContainer:hover #settingsModal {
+    opacity: 1;
+    visibility: visible;
+}
