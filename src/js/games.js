@@ -51,6 +51,20 @@ search.addEventListener("input", () => {
         game.style.display = gameName.includes(search.value) ? "inline-block" : "none";
     });
 });
+// Function to render all games
+function renderAllGames() {
+    fetch('games.json')
+        .then(response => response.json())
+        .then(games => {
+            // Sort games alphabetically by name
+            games.sort((a, b) => a.name.localeCompare(b.name));
+            const allGamesContainer = document.querySelector('#all-games');
+            renderGames(games, allGamesContainer);
+        })
+        .catch(error => console.error('Error:', error));
+}
+// Call the function to render all games on page load
+renderAllGames();
 
 const popularGamesContainer = document.querySelector('#popular-games');
 const recentlyPlayedContainer = document.querySelector('#recently-played-games');
@@ -65,8 +79,8 @@ function addToRecentlyPlayed(game) {
     if (!isAlreadyPlayed) {
         const gameWithTimestamp = { ...game, timestamp: Date.now() };
         recentlyPlayedGames.unshift(gameWithTimestamp); // Add game to the start of the list
-        if (recentlyPlayedGames.length > 5) {
-            recentlyPlayedGames.pop(); // Keep only 5 recent games
+        if (recentlyPlayedGames.length > 3) {
+            recentlyPlayedGames.pop(); // Keep only 3 recent games
         }
     }
 
@@ -96,6 +110,10 @@ function renderRecentlyPlayedGames() {
 fetch('games.json')
     .then(response => response.json())
     .then(games => {
-        renderGames(games, popularGamesContainer);
+        const popularGames = games.slice(0, 15); // Get the first 20 games
+        const remainingGames = games.slice(15); // Get the rest of the games
+
+        renderGames(popularGames, popularGamesContainer);
+        renderGames(remainingGames, document.querySelector('.games-container')); // Render the rest of the games in the main container
         renderRecentlyPlayedGames(); // Render recently played games on page load
     });
