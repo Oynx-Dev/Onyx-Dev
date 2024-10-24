@@ -15,6 +15,18 @@
   border: var(--scrollbar-border-width) solid var(--primary-color);
 }
 
+/* Add custom styles for the Recently Played section */
+.recently-played-section {
+  margin-top: 2vw;
+}
+
+.recently-played-section h2 {
+  color: #fff;
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
 .games-container {
   display: flex;
   flex-wrap: wrap;
@@ -22,45 +34,51 @@
   padding-bottom: 5vw;
   margin-top: 1vw;
 }
+
 .g {
-  width: 250px;
+  width: 300px; /* Adjusted width to accommodate side-by-side layout */
   padding: 1rem;
   margin: 1rem;
-  background-size: cover;
-  background-position: center;
-  border: 2px solid rgba(0, 0, 0, 0);
-  border-radius: 15px;
-  text-align: left;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.308);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  color: white;
-  position: relative;  
-}
-.g:hover {
-  transform: translate(10px, -10px);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4), 0 0 15px var(--accent-color), 0 0 30px var(--accent-color), 0 0 45px var(--accent-color);
-  background-color: var(--accent-color);
-}
-.g img {
-  width: 100%;
-  height: auto;
+  background-color: #202020; /* Dark background for each card */
   border-radius: 10px;
-  margin-bottom: 15px;
+  display: flex; /* Flexbox for side-by-side alignment */
+  align-items: center; /* Vertically center content */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  color: white;
   position: relative;
-  z-index: 7;
 }
+
+.g:hover {
+  transform: translateY(-5px); /* Slight upward movement on hover */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+.g img {
+  width: 60px; /* Smaller image */
+  height: 60px;
+  border-radius: 10px;
+  margin-right: 15px; /* Space between image and text */
+}
+
+.g-content {
+  flex: 1; /* Text container will take up the remaining space */
+}
+
 .g h3 {
-  margin: 1.3rem 0;
-  font-size: 1.2rem;
+  margin: 0;
+  font-size: 1.1rem;
   color: #ffffff;
   font-weight: bold;
-  z-index: 8;
-  position: absolute;
-  bottom: 15px;
-  left: 20px;
-  background-color: rgba(0, 0, 0, 0.534);
-  border-radius: 5px;
 }
+
+.g p {
+  font-size: 0.9rem;
+  color: #b3b3b3;
+  margin-top: 5px;
+  line-height: 1.4;
+}
+
 .g::before {
   content: '';
   position: absolute;
@@ -68,11 +86,16 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(59, 58, 90, 0.349);
-  border-radius: 15px;
-  z-index: 2;
-  box-shadow: 0 0 15px rgba(255, 255, 255, 0.5), 0 4px 10px rgba(0, 0, 0, 0.308);
+  background-color: rgba(255, 255, 255, 0.03); /* Subtle overlay for better contrast */
+  z-index: 1;
 }
+
+.g-content {
+  position: relative;
+  z-index: 2; /* Ensures text and image appear above the overlay */
+}
+
+
 
 #particles-js {
   position: fixed;
@@ -83,3 +106,5 @@
   pointer-events: none;
   z-index: -1;
 }
+
+

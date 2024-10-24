@@ -3,7 +3,7 @@ async function fetchGames() {
         const response = await fetch('games.json');
         const games = await response.json();
         games.sort((a, b) => a.name.localeCompare(b.name));
-        renderGames(games);
+        renderGames(games, document.querySelector('.games-container'));
     } catch (error) {
         console.error('Error:', error);
     }
@@ -15,6 +15,7 @@ function createGameLink(game, gamecdn) {
     link.href = "play.html";
     link.addEventListener('click', () => {
         localStorage.setItem('game', JSON.stringify(game));
+        addToRecentlyPlayed(game);
     });
 
     const img = document.createElement('img');
@@ -29,10 +30,9 @@ function createGameLink(game, gamecdn) {
     return link;
 }
 
-function renderGames(games) {
-    const container = document.querySelector('.games-container');
+function renderGames(games, container) {
     container.innerHTML = '';
-    const gamecdn = "https://asset.zyph3r.com/";
+    const gamecdn = "https://assets.zyph3r.com/";
 
     games.forEach(game => {
         const gameLink = createGameLink(game, gamecdn);
@@ -51,3 +51,51 @@ search.addEventListener("input", () => {
         game.style.display = gameName.includes(search.value) ? "inline-block" : "none";
     });
 });
+
+const popularGamesContainer = document.querySelector('#popular-games');
+const recentlyPlayedContainer = document.querySelector('#recently-played-games');
+
+// Function to add a game to the "Recently Played" list and localStorage
+function addToRecentlyPlayed(game) {
+    let recentlyPlayedGames = JSON.parse(localStorage.getItem('recentlyPlayed')) || [];
+    
+    // Check if the game is already in the recently played list
+    const isAlreadyPlayed = recentlyPlayedGames.some(playedGame => playedGame.name === game.name);
+    
+    if (!isAlreadyPlayed) {
+        const gameWithTimestamp = { ...game, timestamp: Date.now() };
+        recentlyPlayedGames.unshift(gameWithTimestamp); // Add game to the start of the list
+        if (recentlyPlayedGames.length > 5) {
+            recentlyPlayedGames.pop(); // Keep only 5 recent games
+        }
+    }
+
+    // Save the updated list to localStorage
+    localStorage.setItem('recentlyPlayed', JSON.stringify(recentlyPlayedGames));
+
+    // Re-render the recently played games
+    renderRecentlyPlayedGames();
+}
+
+// Function to render recently played games
+function renderRecentlyPlayedGames() {
+    let recentlyPlayedGames = JSON.parse(localStorage.getItem('recentlyPlayed')) || [];
+    const twoDaysInMillis = 2 * 24 * 60 * 60 * 1000;
+    const now = Date.now();
+
+    // Filter out games that are older than 2 days
+    recentlyPlayedGames = recentlyPlayedGames.filter(game => now - game.timestamp < twoDaysInMillis);
+
+    // Save the filtered list back to localStorage
+    localStorage.setItem('recentlyPlayed', JSON.stringify(recentlyPlayedGames));
+
+    renderGames(recentlyPlayedGames, recentlyPlayedContainer);
+}
+
+// Fetch and render popular games
+fetch('games.json')
+    .then(response => response.json())
+    .then(games => {
+        renderGames(games, popularGamesContainer);
+        renderRecentlyPlayedGames(); // Render recently played games on page load
+    });

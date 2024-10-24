@@ -21,7 +21,6 @@
 </head>
 <body class="flex flex-col items-center justify-center h-screen bg-black font-sans font-bold">
     <div class="parallax-bg"></div>
-    <div class="parallax-bg"></div>
     <nav class="fixed top-4 left-1/2 transform -translate-x-1/2 z-50 flex items-center justify-center bg-white/5 backdrop-blur-xl px-6 py-3 rounded-full border border-gray-300" style="box-shadow: 0 0 10px rgba(255, 255, 255, 0.3); border-radius: 20px;">
         <div class="flex items-center space-x-2">
             <span class="text-white text-xl font-bold">Onyx</span>
@@ -40,9 +39,7 @@
                     <h3 class="text-xl font-bold">Settings</h3>
                 </div>
                 <div class="modal-body mt-4">
-                </div>
-                <div class="modal-footer mt-4 flex justify-end">
-                    <button class="bg-white/10 text-white px-4 py-2 rounded-full border border-gray-500 hover:bg-white/20 transition">Save Changes</button>
+                    <button id="aboutBlankButton" class="bg-white/10 text-white px-4 py-2 rounded-full border border-gray-500 hover:bg-white/20 transition">About Blank</button>
                 </div>
             </div>
         </div>
@@ -61,6 +58,7 @@
         </div>
     </footer>
     <script src="/src/js/bubbles.js"></script>
+    <script src="/src/js/about.js"></script>
     <script src="/src/js/subtitle.js"></script>
     <script>
         lucide.createIcons();

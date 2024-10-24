@@ -22,6 +22,8 @@
 <body class="flex flex-col items-center justify-center bg-black font-sans font-bold">
     <div id="particles-js" class="absolute top-0 left-0 w-full h-full" style="z-index: -1;"></div>
     <div class="parallax-bg"></div>
+    
+    <!-- Navbar -->
     <nav class="fixed top-4 left-1/2 transform -translate-x-1/2 z-50 flex items-center justify-center bg-white/5 backdrop-blur-xl px-6 py-3 rounded-full border border-gray-300" style="box-shadow: 0 0 10px rgba(255, 255, 255, 0.3); border-radius: 20px;">
         <div class="flex items-center space-x-2">
             <span class="text-white text-xl font-bold">Onyx</span>
@@ -35,24 +37,28 @@
             <a href="#" class="flex items-center">
                 <i data-lucide="settings" class="w-5 h-5"></i>
             </a>
-            <div id="settingsModal">
-                <div class="modal-header flex justify-between items-center border-b pb-3">
-                    <h3 class="text-xl font-bold">Settings</h3>
-                </div>
-                <div class="modal-body mt-4">
-                </div>
-                <div class="modal-footer mt-4 flex justify-end">
-                    <button class="bg-white/10 text-white px-4 py-2 rounded-full border border-gray-500 hover:bg-white/20 transition">Save Changes</button>
-                </div>
-            </div>
         </div>
     </nav>
+
     <!-- Main Content -->
     <input type="text" placeholder="Search for games" id="searchbar" class="mt-24 px-4 py-2 rounded-md bg-gray-800 text-white border border-gray-600 w-1/2 mx-auto">
-    <div class="games-container mt-8"></div>
+
+    <!-- Recently Played Games Section -->
+    <div class="recently-played-section mt-8">
+        <h2 class="text-white text-2xl mb-4 text-center">Recently Played</h2>
+        <div class="games-container" id="recently-played-games"></div>
+    </div>
+
+    <!-- Popular Games Section -->
+    <div class="games-section mt-8">
+        <h2 class="text-white text-2xl mb-4 text-center">Popular Games</h2>
+        <div class="games-container" id="popular-games"></div>
+    </div>
+
     <div class="bubble-container"></div>
     <script src="/src/js/bubbles.js"></script>
     <script src="/src/js/games.js"></script>
+    <script src="/src/js/about.js"></script>
     <script>
         lucide.createIcons();
     </script>
