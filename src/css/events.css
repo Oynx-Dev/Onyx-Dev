@@ -73,3 +73,13 @@
   z-index: 2;
   box-shadow: 0 0 15px rgba(255, 255, 255, 0.5), 0 4px 10px rgba(0, 0, 0, 0.308);
 }
+
+#particles-js {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: -1;
+}

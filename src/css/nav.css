@@ -1,0 +1,23 @@
+.nav-item-text {
+    display: none;
+    animation: fadeIn 0.5s ease-out forwards;
+}
+
+.nav-item:hover .nav-item-text {
+    display: inline;
+    animation: fadeIn 0.5s ease-out forwards;
+}
+.nav-item a {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: white;
+    transition: transform 0.3s ease-out;
+}
+
+.nav-item:hover a {
+    transform: scale(1.2); /* Make it bigger on hover */
+    color: #007BFF;
+    transition: transform 0.3s ease-out;
+    
+}

@@ -1,6 +1,6 @@
 async function fetchGames() {
     try {
-        const response = await fetch('games.json ');
+        const response = await fetch('games.json');
         const games = await response.json();
         games.sort((a, b) => a.name.localeCompare(b.name));
         renderGames(games);
@@ -32,7 +32,7 @@ function createGameLink(game, gamecdn) {
 function renderGames(games) {
     const container = document.querySelector('.games-container');
     container.innerHTML = '';
-    const gamecdn = "https://assets.zyph3r.com/";
+    const gamecdn = "https://asset.zyph3r.com/";
 
     games.forEach(game => {
         const gameLink = createGameLink(game, gamecdn);

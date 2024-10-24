@@ -7,7 +7,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="src/css/bg.css">
     <link rel="stylesheet" href="src/css/settings.css">
-
+    <link rel="stylesheet" href="src/css/nav.css">
     <link rel="stylesheet" href="src/css/fullbtn.css">
     <script src="https://unpkg.com/lucide@latest"></script>
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6309837329894661"
@@ -26,24 +26,22 @@
             <span class="text-white text-xl font-bold">Onyx</span>
         </div>
         <ul class="flex space-x-6 text-white ml-16 mr-auto">
-            <li><a href="index.html" class="hover:text-gray-300 transition flex items-center"><i data-lucide="home" class="w-5 h-5 mr-2"></i>Home</a></li>
-            <li><a href="events.html" class="hover:text-gray-300 transition flex items-center"><i data-lucide="gamepad" class="w-5 h-5 mr-2"></i>Games</a></li>
-            <li><a href="request.html" class="hover:text-gray-300 transition flex items-center"><i data-lucide="message-circle" class="w-5 h-5 mr-2"></i>Request</a></li>
+            <li class="nav-item"><a href="index.html" class="hover:text-gray-300 transition flex items-center"><i data-lucide="home" class="w-5 h-5 mr-2"></i><span class="nav-item-text">Home</span></a></li>
+            <li class="nav-item"><a href="events.html" class="hover:text-gray-300 transition flex items-center"><i data-lucide="gamepad" class="w-5 h-5 mr-2"></i><span class="nav-item-text">Games</span></a></li>
+            <li class="nav-item"><a href="request.html" class="hover:text-gray-300 transition flex items-center"><i data-lucide="message-circle" class="w-5 h-5 mr-2"></i><span class="nav-item-text">Request</span></a></li>
         </ul>
-        
-        <!-- Settings Button with Hover Modal -->
         <div id="settingsContainer" class="bg-white/10 text-white px-4 py-1 rounded-full border border-gray-500 hover:bg-white/20 transition mr-auto ml-10">
             <a href="#" class="flex items-center">
                 <i data-lucide="settings" class="w-5 h-5"></i>
             </a>
-
-            <!-- Modal that appears on hover -->
             <div id="settingsModal">
                 <div class="modal-header flex justify-between items-center border-b pb-3">
                     <h3 class="text-xl font-bold">Settings</h3>
                 </div>
                 <div class="modal-body mt-4">
-                    <p>Settings content goes here.</p>
+                </div>
+                <div class="modal-footer mt-4 flex justify-end">
+                    <button class="bg-white/10 text-white px-4 py-2 rounded-full border border-gray-500 hover:bg-white/20 transition">Save Changes</button>
                 </div>
             </div>
         </div>
