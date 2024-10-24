@@ -19,5 +19,10 @@
     transform: scale(1.2); /* Make it bigger on hover */
     color: #007BFF;
     transition: transform 0.3s ease-out;
+    border: 0px solid white; /* Add a border on hover */
+    padding: 2px;
+    border-radius: 5px; /* Optional: Add rounded corners */
+    background-color:   rgba(53, 53, 53, 0.5); /* Add black background with opacity */
+
     
 }

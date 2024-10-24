@@ -1,0 +1,67 @@
+/* Light mode */
+.light-mode {
+    background-color: white;
+    color: black;
+}
+
+.light-mode .nav-item a {
+    color: black;
+}
+
+.light-mode .nav-item:hover a {
+    color: #007BFF;
+}
+
+/* Dark mode */
+.dark-mode {
+    background-color: black;
+    color: white;
+}
+
+.dark-mode .nav-item a {
+    color: white;
+}
+
+.dark-mode .nav-item:hover a {
+    color: #007BFF;
+}
+
+/* Toggle button */
+.toggle-mode {
+    margin-left: auto;
+}
+
+.toggle-mode input[type="checkbox"] {
+    display: none;
+}
+
+.toggle-mode label {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+}
+
+.toggle-mode .slider {
+    position: relative;
+    display: inline-block;
+    width: 50px;
+    height: 25px;
+    background-color: #ccc;
+    border-radius: 12.5px;
+}
+
+.toggle-mode .slider:before {
+    content: "";
+    position: absolute;
+    width: 22px;
+    height: 22px;
+    left: 2px;
+    bottom: 2px;
+    background-color: #fff;
+    border-radius: 50%;
+    transition: 0.3s;
+}
+
+input[type="checkbox"]:checked + label .slider:before {
+    transform: translateX(22px);
+}
