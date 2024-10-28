@@ -3,11 +3,19 @@ async function fetchGames() {
         const response = await fetch('games.json');
         const games = await response.json();
         games.sort((a, b) => a.name.localeCompare(b.name));
+        localStorage.setItem('games', JSON.stringify(games)); // Store games in localStorage
         renderGames(games, document.querySelector('.games-container'));
     } catch (error) {
         console.error('Error:', error);
     }
 }
+
+document.addEventListener('click', (event) => {
+    const iframe = document.querySelector('iframe');
+    if (iframe && !iframe.contains(event.target)) {
+        iframe.focus();
+    }
+});
 
 function createGameLink(game, gamecdn) {
     const link = document.createElement('a');
@@ -15,7 +23,9 @@ function createGameLink(game, gamecdn) {
     link.href = "play.html";
     link.addEventListener('click', () => {
         localStorage.setItem('game', JSON.stringify(game));
-        addToRecentlyPlayed(game);
+        if (typeof addToRecentlyPlayed === 'function') {
+            addToRecentlyPlayed(game);
+        }
     });
 
     const img = document.createElement('img');
@@ -51,69 +61,9 @@ search.addEventListener("input", () => {
         game.style.display = gameName.includes(search.value) ? "inline-block" : "none";
     });
 });
-// Function to render all games
+
 function renderAllGames() {
-    fetch('games.json')
-        .then(response => response.json())
-        .then(games => {
-            // Sort games alphabetically by name
-            games.sort((a, b) => a.name.localeCompare(b.name));
-            const allGamesContainer = document.querySelector('#all-games');
-            renderGames(games, allGamesContainer);
-        })
-        .catch(error => console.error('Error:', error));
+    const games = JSON.parse(localStorage.getItem('games')) || [];
+    const container = document.querySelector('.games-container');
+    renderGames(games, container);
 }
-// Call the function to render all games on page load
-renderAllGames();
-
-const popularGamesContainer = document.querySelector('#popular-games');
-const recentlyPlayedContainer = document.querySelector('#recently-played-games');
-
-// Function to add a game to the "Recently Played" list and localStorage
-function addToRecentlyPlayed(game) {
-    let recentlyPlayedGames = JSON.parse(localStorage.getItem('recentlyPlayed')) || [];
-    
-    // Check if the game is already in the recently played list
-    const isAlreadyPlayed = recentlyPlayedGames.some(playedGame => playedGame.name === game.name);
-    
-    if (!isAlreadyPlayed) {
-        const gameWithTimestamp = { ...game, timestamp: Date.now() };
-        recentlyPlayedGames.unshift(gameWithTimestamp); // Add game to the start of the list
-        if (recentlyPlayedGames.length > 3) {
-            recentlyPlayedGames.pop(); // Keep only 3 recent games
-        }
-    }
-
-    // Save the updated list to localStorage
-    localStorage.setItem('recentlyPlayed', JSON.stringify(recentlyPlayedGames));
-
-    // Re-render the recently played games
-    renderRecentlyPlayedGames();
-}
-
-// Function to render recently played games
-function renderRecentlyPlayedGames() {
-    let recentlyPlayedGames = JSON.parse(localStorage.getItem('recentlyPlayed')) || [];
-    const twoDaysInMillis = 2 * 24 * 60 * 60 * 1000;
-    const now = Date.now();
-
-    // Filter out games that are older than 2 days
-    recentlyPlayedGames = recentlyPlayedGames.filter(game => now - game.timestamp < twoDaysInMillis);
-
-    // Save the filtered list back to localStorage
-    localStorage.setItem('recentlyPlayed', JSON.stringify(recentlyPlayedGames));
-
-    renderGames(recentlyPlayedGames, recentlyPlayedContainer);
-}
-
-// Fetch and render popular games
-fetch('games.json')
-    .then(response => response.json())
-    .then(games => {
-        const popularGames = games.slice(0, 15); // Get the first 20 games
-        const remainingGames = games.slice(15); // Get the rest of the games
-
-        renderGames(popularGames, popularGamesContainer);
-        renderGames(remainingGames, document.querySelector('.games-container')); // Render the rest of the games in the main container
-        renderRecentlyPlayedGames(); // Render recently played games on page load
-    });

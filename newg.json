@@ -1,11 +1,5 @@
 [
     {
-        "name": "1",
-        "root": "1",
-        "file": "index.html",
-        "img": "meta/apple-touch-icon.png"
-    },
-    {
         "name": "10 Minutes Till Dawn",
         "root": "10-minutes-till-dawn",
         "file": "index.html",
@@ -30,40 +24,28 @@
         "img": "splash.png"
     },
     {
-        "name": "2048 Multitask",
-        "root": "2048-multitask",
-        "file": "index.html",
-        "img": "splash.png"
-    },
-    {
         "name": "2048",
         "root": "2048",
         "file": "index.html",
         "img": "thumb.png"
     },
     {
-        "name": "9007199254740992",
-        "root": "9007199254740992",
-        "file": "index.html",
-        "img": ""
-    },
-    {
         "name": "99 Balls",
         "root": "99balls",
         "file": "index.html",
-        "img": ""
+        "img": "99-balls-evo.jpg"
     },
     {
         "name": "CMM Client",
         "root": "CMMClient",
         "file": "index.html",
-        "img": ""
+        "img": "EC4B216C-B637-41A3-A3D9-79D4048DD7A3.jpeg"
     },
     {
         "name": "Contre Jour",
         "root": "ContreJour",
         "file": "index.html",
-        "img": ""
+        "img": "icon.png"
     },
     {
         "name": "Cut the Rope",
@@ -75,79 +57,73 @@
         "name": "DOOM ORI",
         "root": "DOOMORI",
         "file": "index.html",
-        "img": ""
+        "img": "splash.png"
     },
     {
         "name": "Debt Collector",
         "root": "DebtCollector",
         "file": "index.html",
-        "img": ""
+        "img": "Textures/Title.png" 
     },
     {
         "name": "Doge Miner",
         "root": "DogeMiner",
         "file": "index.html",
-        "img": ""
+        "img": "/img/dogeminer_300x300.png"
     },
     {
         "name": "Doge Miner 2",
         "root": "Dogeminer2",
         "file": "index.html",
-        "img": ""
+        "img": "thumb.jpg"
     },
     {
         "name": "Offline Paradise",
         "root": "OfflineParadise",
         "file": "index.html",
-        "img": ""
+        "img": "assets/icon.jpeg"
     },
     {
         "name": "Rocket League",
         "root": "Rocket-League",
         "file": "index.html",
-        "img": ""
+        "img": "splash.png"
     },
     {
         "name": "Run 2",
         "root": "Run2",
         "file": "index.html",
-        "img": ""
+        "img": "run-2-logo.jpg"
     },
     {
         "name": "Stickman Survival",
         "root": "Stickman-Survival",
         "file": "index.html",
-        "img": ""
+        "img": "Icon.png"
     },
     {
         "name": "Trimps",
         "root": "Trimps",
         "file": "index.html",
-        "img": ""
+        "img": "trimp.jpg"
     },
     {
         "name": "A Dance of Fire and Ice",
         "root": "a-dance-of-fire-and-ice",
         "file": "index.html",
-        "img": ""
-    },
-    {
-        "name": "A Dark Room",
-        "root": "a-dark-room",
-        "file": "index.html",
-        "img": ""
+        "img": "splash.png"
     },
     {
         "name": "Achievement Unlocked",
         "root": "achievementunlocked",
         "file": "index.html",
-        "img": ""
+        "img": "achievementunlocked.png"
     },
     {
         "name": "A Dark Room",
         "root": "adarkroom",
         "file": "index.html",
-        "img": ""
+        "img": "splash.png"
     },
     {
         "name": "Adrenaline",
