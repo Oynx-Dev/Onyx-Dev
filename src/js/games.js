@@ -42,7 +42,17 @@ function createGameLink(game, gamecdn) {
 
 function renderGames(games, container) {
     container.innerHTML = '';
-    const gamecdn = "https://assets.zyph3r.com/";
+    const currentDomain = window.location.hostname;
+    let gamecdn;
+
+    if (currentDomain.includes("zyph3r.com")) {
+        gamecdn = "https://assets.zyph3r.com/";
+    } else if (currentDomain.includes("onyxdev.me")) {
+        gamecdn = "https://assets.onyxdev.me/";
+    } else {
+        console.error('Unsupported domain.');
+        return;
+    }
 
     games.forEach(game => {
         const gameLink = createGameLink(game, gamecdn);
