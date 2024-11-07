@@ -1,4 +1,4 @@
-const titles = ["Onyx Dev.", "Freedom.", "Halloween."];
+const titles = ["Onyx Dev.", "Freedom."];
 let currentTitle = 0;
 let charIndex = 0;
 let isDeleting = false;
