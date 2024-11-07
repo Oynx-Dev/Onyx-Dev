@@ -16,7 +16,8 @@ document.addEventListener("DOMContentLoaded", function() {
     "vscode suggested these xd",
     "these are so random",
     "nice face",
-    "smile your camera is being recorded"
+    "smile your camera is being recorded",
+    "Valorant is ying yang game and Fortnite is a good mæn’s game - another subtitle"
   ];
   
   // Select a random subtitle
