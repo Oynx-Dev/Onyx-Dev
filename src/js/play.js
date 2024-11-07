@@ -1,19 +1,9 @@
 let game = localStorage.getItem("game");
 if (game) {
     game = JSON.parse(game);
-    const currentDomain = window.location.hostname;
-    let gamecdn;
-
-    if (currentDomain.includes("zyph3r.com")) {
-        gamecdn = "https://assets.zyph3r.com/";
-    } else if (currentDomain.includes("onyxdev.me")) {
-        gamecdn = "https://assets.onyxdev.me/";
-    } else {
-        console.error('Unsupported domain.');
-        return;
-    }
-
+    const gamecdn = "https://assets.zyph3r.com/";
     const gameUrl = `${gamecdn}${game.root}/${game.file}`;
+
     const iframe = document.querySelector("#game");
     iframe.src = gameUrl;
     iframe.onload = () => {
