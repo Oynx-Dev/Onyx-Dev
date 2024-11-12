@@ -44,6 +44,7 @@ function createGameLink(game, gamecdn) {
 function renderGames(games, container) {
     container.innerHTML = '';
     const gamecdn = "https://assets.zyph3r.com/";
+    const additionalGamecdn = "https://assets.onyxdev.me/";
 
     games.forEach(game => {
         const gameLink = createGameLink(game, gamecdn);
