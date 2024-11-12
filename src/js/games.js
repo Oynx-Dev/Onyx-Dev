@@ -17,6 +17,7 @@ document.addEventListener('click', (event) => {
     }
 });
 
+
 function createGameLink(game, gamecdn) {
     const link = document.createElement('a');
     link.className = 'g';
