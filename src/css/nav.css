@@ -1,28 +1,14 @@
-.nav-item-text {
-    display: none;
-    animation: fadeIn 0.5s ease-out forwards;
-}
-
-.nav-item:hover .nav-item-text {
-    display: inline;
-    animation: fadeIn 0.5s ease-out forwards;
-}
 .nav-item a {
     display: flex;
     align-items: center;
     text-decoration: none;
     color: white;
-    transition: transform 0.3s ease-out;
+    padding: 2px; /* Set padding here */
+    border: 0px solid transparent; /* Set border here */
+    border-radius: 5px; /* Optional: Add rounded corners */
 }
 
 .nav-item:hover a {
-    transform: scale(1.2); /* Make it bigger on hover */
     color: #007BFF;
-    transition: transform 0.3s ease-out;
-    border: 0px solid white; /* Add a border on hover */
-    padding: 2px;
-    border-radius: 5px; /* Optional: Add rounded corners */
-    background-color:   rgba(53, 53, 53, 0.5); /* Add black background with opacity */
-
-    
+    background-color: rgba(53, 53, 53, 0.5); /* Add black background with opacity */
 }

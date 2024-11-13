@@ -14,7 +14,7 @@ document.addEventListener('click', (event) => {
     const iframe = document.querySelector('iframe');
     if (iframe && !iframe.contains(event.target)) {
         iframe.focus();
-    }
+    }   
 });
 
 

@@ -21,16 +21,16 @@
 </head>
 <body class="flex flex-col items-center justify-center h-screen bg-[#030512]  font-sans font-bold">
     <div class="parallax-bg"></div>
-    <nav class="fixed top-4 left-1/2 transform -translate-x-1/2 z-50 flex items-center justify-center bg-white/5 backdrop-blur-xl px-6 py-3 rounded-full border border-gray-300" style="box-shadow: 0 0 10px rgba(255, 255, 255, 0.3); border-radius: 20px;">
+    <nav class="fixed top-4 left-1/2 transform -translate-x-1/2 z-50 flex items-center justify-between bg-white/5 backdrop-blur-xl px-16 py-3 rounded-full border border-gray-300" style="box-shadow: 0 0 10px rgba(255, 255, 255, 0.3); border-radius: 20px;">
         <div class="flex items-center space-x-2">
             <span class="text-white text-xl font-bold">Onyx</span>
         </div>
         <ul class="flex space-x-6 text-white ml-16 mr-auto">
-            <li class="nav-item"><a href="index.html" class="hover:text-gray-300 transition flex items-center"><i data-lucide="home" class="w-5 h-5"></i></a></li>
-            <li class="nav-item"><a href="events.html" class="hover:text-gray-300 transition flex items-center"><i data-lucide="gamepad" class="w-5 h-5"></i></a></li>
-            <li class="nav-item"><a href="request.html" class="hover:text-gray-300 transition flex items-center"><i data-lucide="message-circle" class="w-5 h-5"></i></a></li>
+            <li class="nav-item"><a href="index.html" class="transition flex items-center"><i data-lucide="home" class="w-5 h-5"></i> <span class="ml-1">Games</span></a></li>
+            <li class="nav-item"><a href="events.html" class="transition flex items-center"><i data-lucide="gamepad" class="w-5 h-5"></i> <span class="ml-1">Games</span></a></li>
+            <li class="nav-item"><a href="request.html" class="transition flex items-center"><i data-lucide="message-circle" class="w-5 h-5"></i> <span class="ml-1">Request</span></a></li>
         </ul>
-        <div id="settingsContainer" class="bg-white/10 text-white px-4 py-1 rounded-full border border-gray-500 hover:bg-white/20 transition mr-auto ml-10">
+        <div id="settingsContainer" class="bg-white/10 text-white px-4 py-1 rounded-full border border-gray-500 hover:bg-white/20 transition ml-10">
             <a href="#" class="flex items-center">
                 <i data-lucide="settings" class="w-5 h-5"></i>
             </a>

@@ -69,6 +69,7 @@ document.addEventListener("DOMContentLoaded", function() {
     "I’m not a chef, but I can cook up some laughs",
     "I’m not a musician, but I can play a good joke",
     "I’m not a therapist, but I can listen to your silliness"
+    
   ];
   
   // Select a random subtitle

@@ -40,7 +40,7 @@
   }
 
   .g img {
-    width: 80%;
+    width: 77%;
     height: auto;
     border-radius: 10px;
     margin-right: 10px;
@@ -64,7 +64,7 @@
     border-radius: 5px;
     z-index: 2;
     transition: background-color 0.2s ease;
-    width: calc(80% - 0.2srem);
+    width: calc(80% - 0.6srem);
     text-align: center;
     background-position: center;
   }
